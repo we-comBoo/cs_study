@@ -107,6 +107,31 @@ content-type: txt/html; charset=UTF-8
 * `500` : Internal Server Error : 서버 내부적으로 오류가 발생해 응답에 실패
 * `502` : Bad Gateway : 서버 간의 네트워크 문제 발생으로 인한 통신 제대로 되지 않음
 
+## HTTP 요청 Method
+
+### GET 
+* 리소스 단순 조회
+* 데이터를 Query String에 담아 URL에 노출됨
+* `안정성` : 서버의 상태 변경되지 않음
+* `멱등성` : 여러번 요청 시 서버 상태 동일
+
+### POST
+* 리소스 생성/변경
+* 데이터를 HTTP 메세지 body에 담음
+* `안정성 X` : 서버의 상태 변경됨
+* `멱등성 X` : 여러번 요청 시 서버 상태 계속 바뀜
+
+### PUT
+
+### PATCH
+
+### DELETE
+
+### HEAD
+
+### OPTIONS
+
+
 ## 보안
 ### HTTP 한계
 * 서버에서 브라우저로 전송되는 정보가 암호화 되지 않음 
