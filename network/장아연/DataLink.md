@@ -102,3 +102,10 @@
 * 송신 노드가 수신 노드의 처리 속도 고려해 초과하지 않도록 전송 제어
 * 수신 노드가 송신 노드에게 수신 확인 응답 제공
 * stop and wait 방식, sliding window 방식
+
+---
+## LAN이란
+
+## Ethernet이란
+
+## DataLink 계층이란?
