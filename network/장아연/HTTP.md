@@ -250,7 +250,8 @@ content-type: txt/html; charset=UTF-8
 
 
 ## HTTP의 GET과 POST 방식의 차리
-
+* 언제 사용 되는가?
+* 멱등성과 안정성 차원에서 설명 
 
 ## HTTP status code 종류
 * 1XX : 정보가 수신되어 처리 중임
