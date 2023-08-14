@@ -1,13 +1,25 @@
 ## HTTP란?
 ### 정의
 1. Hypertext Transfer Protocol
-2. 서로 다른 서버 사이에 통신을 주고 받게 하는 프로토콜
+2. 서버와 클라이언트 사이에 TCP/IP 통신 위에서 메세지를 교환하기 위한 프로토콜
 
 ### 특징
 
 1. server / client 모델
+* client : 리소스 요청 - request 메세지 전송
+* server : 리소스 요청을 받아 해당 리소스 제공 - response 메세지 전송
 2. stateless
+* 과거 정보 저장하지 않음
+* 새로운 request에 대해 새로운 response 제공
+* 상태 유지하지 않아 용이한 확장
 3. connectionless
+* 요청을 주고 받을 때만 연결을 유지함 
+### 상태 유지가 필요한 경우
+1. 세션과 쿠키 이용
+2. Request URI로 리소스 식별
+* request url에 포함
+* 헤더의 host 필드에 네트워크 로케이션 포함
+* 자신에게 송신하는 경우 option 와일드카드 지정
 
 ## HTTP 메세지
 
@@ -20,11 +32,7 @@
 * 경로
 * HTTP 버전
 
-2. 헤더
-* Host
-* User-agent
-* Accept
-* Accept-Language
+2. 요청 헤더 / 공통 헤더 / 엔티티 헤더
 
 3. 빈줄
 4. 분몬
@@ -36,8 +44,7 @@
 * 상태 코드
 * 상태 메세지
 
-2. 헤더
-* ㅜㅏㅣㅟㄴ아ㅜ
+2. 응답 헤더 / 공통 헤더 / 엔티티 헤더
 
 3. 빈줄
 4. 본문
@@ -48,16 +55,31 @@
 ### HTTP 헤더
 1. 공통 헤더
 * Date
+* Connection
 * Cache-Control
+* Content-Encoding
+
 2. 요청 헤더
 * Host
 * User-Agent
+* Accept
+* Authorization
+* Origin
+* Referer
+
 3. 응답 헤더
-* Server
+* Access-Control-Allow-Origin
+* Allow
+* Content-Disposition
 * Location
+* Content-Security-Policy
+* Server
+
 4. 엔티티 헤더
 * Content-Length
 * Content-Type
+* Content-Language
+* Content-Encoding
 
 
 ### 요청 헤더 예시 (일부)
@@ -68,7 +90,7 @@ Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
 cache-control: max-age=0
 ```
 
-### 요청 헤더 예시 (일부)
+### 응답 헤더 예시 (일부)
 ```
 server: gws
 cache-control: private, max-age=0
@@ -122,8 +144,14 @@ content-type: txt/html; charset=UTF-8
 * `멱등성 X` : 여러번 요청 시 서버 상태 계속 바뀜
 
 ### PUT
+* 리소스 전체 수정 (없다면 새로 생성)
+* `안정성 X` : 서버 상태 변경됨
+* `멱등성 O` : 여러번 요청 시 서버 상태 유지됨
 
 ### PATCH
+* 리소스 일부 수정 
+* `안정성 X` : 서버 상태 변경됨
+* `멱등성 ... ` : 멱등성 있을 수도 없을 수도...
 
 ### DELETE
 
@@ -134,18 +162,20 @@ content-type: txt/html; charset=UTF-8
 
 ## 보안
 ### HTTP 한계
-* 서버에서 브라우저로 전송되는 정보가 암호화 되지 않음 
-* 평문 데이터 전송으로 인해 쉽게 도난 당할 수 있음
+1. 암호화하지 않은 통신 - 도청 가능성 존재
+2. 낮은 신뢰성 - 통신 상대 확인 X
 ### HTTP 보안 문제
 1. 중간자 공격 
 * 네트워크 통신 도중에 중간자가 침입해 통신 내용을 도청/조작하는 공격 기법
 
 2. 통신 상대 확인하지 않음
-* 어디에서 보낸 요청인지 파악 불가능
-* 통신 중인 상태가 허가된 상대인지 파악 불가능
+* 누가 요청을 보내도 응답해주는 구조
+* 요청을 보내는 클라이언트에 대한 확신 없음
+* 응답해주는 서버가 의도한 서버인지에 대한 확신 없음
 
 3. HTTP의 암호화를 담당하는 SSL 도입
-* SSL(Secure Socket Layer)를 사용해 서버와 브라우저 사이에 암호화된 연결을 하고, 서버와 브라우저가 민감함 정보를 주고 받을 때 도난 당하는 것 방지
+* 암호화 기반 인터넷 보안 프로토콜인 SSL(Secure Socket Layer) 도입
+* 인터넷 통신의 개인정보 보호, 인증, 데이터 무결성을 위해 개발됨
 
 ## HTTPS
 ### 정의
