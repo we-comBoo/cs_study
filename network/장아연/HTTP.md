@@ -122,6 +122,7 @@ content-type: txt/html; charset=UTF-8
 * 클라이언트 요청에 오류 있음
 * `400` : Bad Request : 클라이언트 요청 내용에 문제 있음
 * `401` : Unauthorized : 인증되지 않은 사용자
+* `403` : Forbidden : 클라이언트가 리소트에 대한 필요권한 가지고 있지 않음
 * `404` : Not Found : 요청에 문제 없으나 요청한 데이터 존재하지 않음
 
 5. 5XX
