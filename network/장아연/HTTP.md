@@ -134,6 +134,16 @@ content-type: txt/html; charset=UTF-8
 
 ## HTTP 요청 Method
 
+### 안정성
+
+* 클라이언트가 요청해도 서버의 자원 변경되지 않음
+* GET, HEAD, OPTIONS
+
+### 멱등성
+* 여러번 요청했을 때와 1번 요청했을 때 자원의 상태 동일함
+* GET, PUT, DELETE, HEAD, OPTIONS
+
+
 ### GET 
 * 리소스 단순 조회
 * 데이터를 Query String에 담아 URL에 노출됨
