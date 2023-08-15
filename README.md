@@ -1,4 +1,4 @@
-# 2) Network 
+# 1) Network 
 - study log : [이규민](h8543) , [권민아](htt59) , [장아연]()
 <hr/>
 
