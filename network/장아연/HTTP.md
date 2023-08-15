@@ -209,7 +209,7 @@ content-type: txt/html; charset=UTF-8
 * 응답해주는 서버가 의도한 서버인지에 대한 확신 없음
 
 3. HTTP의 암호화를 담당하는 SSL 도입
-* 암호화 기반 인터넷 보안 프로토콜인 SSL(Secure Socket Layer) 도입
+* **암호화 기반 인터넷 보안 프로토콜인 SSL(Secure Socket Layer)** 도입
 * 인터넷 통신의 개인정보 보호, 인증, 데이터 무결성을 위해 개발됨
 
 ## HTTPS
