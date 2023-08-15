@@ -27,6 +27,17 @@
 
 ### 정의
 
+### 기본 부고
+1. 시작줄
+2. 옵션 
+* HTTP 헤더
+* 요청/메세지 본문에 대한 설명
+3. 빈줄
+* 모든 메타 정보가 전송됨을 알림
+4. 본문
+* 본문의 존재 유무 및 크기는 첫줄과 HTTP 헤더에 명시됨
+* 요청과 관련된 내용, 응답과 관련된 문서가 들어감
+
 ### 요청 메세지
 
 1. 요청 라인
@@ -64,20 +75,22 @@
 * 헤더 없이도 통신 가능 (서버와 클라이언트 통신에 필요한 만큼만 작성)
 ### HTTP 헤더
 1. 공통 헤더
+요청과 응답 모두에 적용되지만 body에서 최종적으로 전송되는 데이터와 관련없는 헤더
 * Date
 * Connection
 * Cache-Control
-* Content-Encoding
 
 2. 요청 헤더
+fetch될 리소스나 클라이언트 자체에 대한 자세한 정보를 포함하는 헤더
 * Host
 * User-Agent
+* Referer
 * Accept
 * Authorization
 * Origin
-* Referer
 
 3. 응답 헤더
+위치 또는 서버 자체에 대한 정보와 같이 응답에 대한 부가적인 정보를 갖는 헤더
 * Access-Control-Allow-Origin
 * Allow
 * Content-Disposition
@@ -86,6 +99,7 @@
 * Server
 
 4. 엔티티 헤더
+컨텐츠 길이나 MIME 타입과 같이 엔티티 바디에 대한 자세한 정보를 포함하는 헤더 
 * Content-Length
 * Content-Type
 * Content-Language
