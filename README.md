@@ -45,14 +45,14 @@
 1. NAT란?
 2. 포트포워딩이란?
 
-### :notebook_with_decorative_cover: HTTP 프로토콜
+### ✏️ HTTP 프로토콜
 1. HTTP vs HTTPS
 2. HTTP의 GET 방식 vs POST 방식
 3. HTTP의 PUT 방식 vs PATCH 방식
 4. HTTP의 Statue Code의 종류는?
 5. 주소창에 URL을 치고 엔터를 치면 흐름이 어떻게 되나요?
 
-### :notebook_with_decorative_cover: 기타
+###  ✏️ 기타
 1. CORS란? SOP와 관련된 CORS 발생 원인
 2. 쿠키 vs 세션
 3. 프록시와 프록시 서버란?
