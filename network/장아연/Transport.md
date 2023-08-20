@@ -36,7 +36,7 @@ Transmission Control Protocol (사용자 전송 제어 프로토콜)
 
 2. 헤더 구성
 
-    ![Alt text](./img/image.png)
+    ![Alt text](./img/image-19.png)
 
 
 3. 플래그
@@ -56,7 +56,7 @@ Transmission Control Protocol (사용자 전송 제어 프로토콜)
 1. **소켓 생성**
 ![Alt text](./img/image-1.png)
 * 브라우저에서 도메인과 사용할 타입(TCP)를 설정해 소켓 호출함
-* 프로토콜 스택이 이를 받아서 소켓 작성해 드스크립터 반환함
+* 프로토콜 스택이 이를 받아서 소켓 작성해 브라우저에게 디스크립터 반환함
 
 
 2. **3-way handshake** - connection 연결
@@ -140,9 +140,24 @@ User Datagram Protocol (사용자 데이터그램 프로토콜)
 ![Alt text](./img/image-18.png)
 * 8 바이트 고정된 길이의 해더
 
+
 ### UCP 데이터 전송
 
 
+1. **소켓 생성**
+![Alt text](./img/image-20.png)
+* 브라우저에서 도메인과 사용할 타입(UDP)를 설정해 소켓 호출함
+* 프로토콜 스택이 이를 받아서 소켓 작성해 브라우저에게 디스크립터 반환함
+
+2. **요청 및 데이터 송수신**
+![Alt text](./img/image-21.png)
+* 클라이언트가 sendto 호출하고, 브라우저로부터 받은 Http request 메세지를 받아 패킷으로 만들어 서버에 전송함
+
+3. **응답 및 데이터 송수신**
+![Alt text](./img/image-22.png)
+* 서버에서 응답을 위해 sendto 호출
+* 패킷 소실되더라도 다음 데이터 바로 전송함 
+* 클라이언트는 데이터 손실 여부와 무관하게 recvfrom 호출해 데이터 수신함
 
 ---
 1. PORT란? 주요 PORT?
@@ -151,3 +166,20 @@ User Datagram Protocol (사용자 데이터그램 프로토콜)
 4. 4-way handshake
 5. NAT
 6. PORT
+
+---
+1. 3 way handshake
+![Alt text](https://wormwlrm.github.io/static/021fff67562013e89c1da8870f706fc7/cd78c/6.png)
+
+2. 데이터 교환 과정
+![](https://wormwlrm.github.io/static/d0e509b94cfebdf2a2b96d30ca82e2a8/105d8/7.png)
+
+3. 4 way handshake 
+![](https://wormwlrm.github.io/static/0c96b2b6a249dabcac4f34de12507ba4/11a8f/8.png)
+
+4. TCP vs UDP 
+![](https://images.velog.io/images/daon9apples/post/f4f756e7-c6f5-41bd-8467-e381517be404/image.png)
+## 참고
+https://wormwlrm.github.io/2021/09/23/Overview-of-TCP-and-UDP.html
+
+https://www.youtube.com/watch?v=ad4AO1shXsY
