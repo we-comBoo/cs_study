@@ -36,7 +36,7 @@ Transmission Control Protocol (사용자 전송 제어 프로토콜)
 
 2. 헤더 구성
 
-    ![Alt text](image.png)
+    ![Alt text](./img/image.png)
 
 
 3. 플래그
