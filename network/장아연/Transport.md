@@ -234,8 +234,8 @@ Transmission Control Protocol (사용자 전송 제어 프로토콜)
     (1번 패킷 도착할 때까지 0번 ACK만 계속 보냄. 전송 측에서 계속 전송하는 패킷은 폐기함)
     2. 타임 아웃되어 패킷을 재전송할 때 다시 순서대로 패킷 1번, 패킷 2번, 패킷 3번... 보냄
     
-    **전체 과정 요약**
-    ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2TWgW%2FbtqFgIezE8q%2FINg53Z3F4Ba2I7L2GjKksK%2Fimg.png)
+**전체 과정 요약**
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2TWgW%2FbtqFgIezE8q%2FINg53Z3F4Ba2I7L2GjKksK%2Fimg.png)
 
 
 ### 혼잡 제어 
